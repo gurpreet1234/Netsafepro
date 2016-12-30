@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Safenetpro.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Safenetpro_com_usaepay_sandbox_usaepayService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://sandbox.usaepay.com/soap/gate/1412E031</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

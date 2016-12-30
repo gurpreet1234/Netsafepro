@@ -1,0 +1,508 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="Safenetpro.Main" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="css/UserPortal.css" />
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+
+    <style>
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Open Sans Light'), local('OpenSans-Light'), url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 600;
+            src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSugdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Open Sans Bold'), local('OpenSans-Bold'), url(https://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxko2lTMeWA_kmIyWrkNCwPc.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: italic;
+            font-weight: 400;
+            src: local('Open Sans Italic'), local('OpenSans-Italic'), url(https://fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBo4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: italic;
+            font-weight: 600;
+            src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxl2umOyRU7PgRiv8DXcgJjk.woff2) format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: italic;
+            font-weight: 700;
+            src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxolIZu-HDpmDIZMigmsroc4.woff2) format('woff2');
+        }
+
+        html {
+            font: 16px "Open Sans", sans-serif;
+            font-weight: 400;
+            color: #595959;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            padding: 80px 0 0 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            min-height: 100%;
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            content: " ";
+            display: table;
+        }
+
+        #wrapper {
+            position: relative;
+            width: 100%;
+            min-height: 100%;
+            overflow: hidden;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .clearfix {
+            *zoom: 1;
+        }
+
+        *, *:before, *:after {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        main,
+        nav,
+        section,
+        summary {
+            display: block;
+        }
+
+        header {
+            background: -webkit-gradient(linear, left top, right top, from(#F2F2F2), to(#FAFAFA));
+            background: -webkit-linear-gradient(top, #F2F2F2, #FAFAFA);
+            background: -moz-linear-gradient(top, #F2F2F2, #FAFAFA);
+            background: -o-linear-gradient(top, #F2F2F2, #FAFAFA);
+            background: -ms-linear-gradient(top, #F2F2F2, #FAFAFA);
+            background: linear-gradient(top, #F2F2F2, #FAFAFA);
+            background-color: #F2F2F2;
+            width: 100%;
+            height: 80px;
+            position: fixed;
+            top: 0;
+            letter-spacing: 0;
+            z-index: 100;
+            -webkit-box-shadow: 1px 1px 6px #696969;
+            -moz-box-shadow: 1px 1px 6px #696969;
+            box-shadow: 1px 1px 6px #696969;
+        }
+
+        .container {
+            margin: 0 auto;
+            width: 1100px;
+            position: relative;
+        }
+
+        header .logo {
+            width: 300px;
+            height: 56px;
+            background: url(img/sprite.png) -42px -107px;
+            display: block;
+            outline: none;
+            text-indent: -9999px;
+            float: left;
+            position: relative;
+            top: 10px;
+        }
+
+        .logoleft {
+            width: 300px;
+            height: 56px;
+            background: url(img/sprite.png) -42px -107px;
+            display: block;
+            outline: none;
+            text-indent: -9999px;
+            float: left;
+            position: relative;
+            top: 10px;
+        }
+
+        #top-nav {
+            float: right;
+            display: inline-block;
+            position: relative;
+            top: 33px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+            #top-nav li {
+                margin: 0;
+                padding: 0;
+                float: left;
+                display: inline-block;
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 17px;
+                margin-left: 40px;
+                position: relative;
+                line-height: 100%;
+            }
+
+                #top-nav li a {
+                    float: left;
+                    display: inline-block;
+                    text-transform: uppercase;
+                    color: #7C7C7C;
+                    text-decoration: none;
+                    padding-bottom: 10px;
+                }
+
+                    #top-nav li a.selected, #top-nav li a:hover {
+                        border-bottom: 2px solid #0b72b5;
+                    }
+
+                #top-nav li:nth-child(2n+2) a.selected, #top-nav li:nth-child(2n+2) a:hover {
+                    border-bottom: 2px solid #8BCD44;
+                }
+
+                #top-nav li:nth-child(3n+3) a.selected, #top-nav li:nth-child(3n+3) a:hover {
+                    border-bottom: 2px solid #0b72b5;
+                }
+
+                #top-nav li:nth-child(4n+4) a.selected, #top-nav li:nth-child(4n+4) a:hover {
+                    border-bottom: 2px solid #A365B0;
+                }
+
+                #top-nav li:nth-child(5n+5) a.selected, #top-nav li:nth-child(5n+5) a:hover {
+                    border-bottom: 2px solid #FFA200;
+                }
+
+                #top-nav li a {
+                    float: left;
+                    display: inline-block;
+                    text-transform: uppercase;
+                    color: #7C7C7C;
+                    text-decoration: none;
+                    padding-bottom: 10px;
+                }
+
+            #top-nav .top-cta a {
+                vertical-align: middle;
+                display: inline-block;
+                text-align: center;
+                margin-top: -10px;
+                padding: 15px 15px 15px 15px;
+                /*  height: 34px;*/
+                line-height: 5px;
+                color: #fff;
+                font-size: 12px;
+                font-weight: 600;
+                text-decoration: none;
+                text-transform: none;
+                background: #0b72b5;
+                /*border: 1px solid #D19B07;*/
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+                #top-nav .top-cta a:hover {
+                    background: #25adc7;
+                }
+
+        .top-sign-up a {
+            padding-left: 8px;
+            font-size: 10px;
+            color: #000;
+        }
+
+            .top-sign-up a:hover {
+                border-bottom: none !important;
+            }
+
+        /****************************Left Nav********************************/
+
+        .leftNav {
+            background: #f5f5f5;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 0; /* padding:15px; width:250px;*/
+            height: 100%;
+            z-index: 110;
+        }
+
+            .leftNav ul {
+                list-style: none;
+                padding: 40px 0 0 0;
+                margin: 0;
+                margin-top: 20%;
+            }
+
+                .leftNav ul li {
+                    padding-bottom: 5px;
+                }
+
+            .leftNav li a {
+                color: #7C7C7C;
+                text-decoration: none;
+                display: block;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                padding: 5px 10px;
+                font-weight: bold;
+                overflow: hidden;
+            }
+
+                .leftNav li a:hover {
+                    background: #fff;
+                    color: #333;
+                }
+
+        .menuToggle {
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            padding: 10px;
+            background: #333;
+            position: absolute;
+            right: -30px;
+            top: calc(50% - 25px);
+        }
+
+        .navContainer {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //on click show the hider div and the message
+            $("#showpopup").click(function () {
+                $("#hider").fadeIn("slow");
+                $('#popup_box').fadeIn("slow");
+            });
+            //on click hide the message and the
+            $("#buttonClose").click(function () {
+                $("#hider").fadeOut("slow");
+                $('#popup_box').fadeOut("slow");
+            });
+            $('.menuToggle').click(function () {
+                if ($('.leftNav').hasClass('open')) {
+                    $('.leftNav').removeClass('open');
+                    $('.leftNav').animate({ 'width': '-2px', 'padding': '0' }, 100);
+                } else {
+                    $('.leftNav').addClass('open');
+                    $('.leftNav').animate({ 'width': '250px', 'padding': '15px' }, 200);
+                }
+            });
+        });
+    </script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <%-- <nav class="navbar navbg navbar-fixed-top" role="navigation">
+            <div class="container" style="width: 90%;">
+                <div class="pull-right loginBox" id="dvheaderButtons" runat="server">
+                    <p id="accountLogin" runat="server"><a href="SignIn.aspx" class="login">Account Login</a></p>
+                    <p id="accountSignUp" runat="server"><a href="SignUp.aspx" class="login">My Account</a></p>
+                    <p id="createTicket" runat="server"><a href="#" class="btn btn-gray"><i class="customIcon icon-email"></i>Create a ticked</a></p>
+                    <p id="liveChat" runat="server"><a href="#" class="btn btn-blue"><i class="customIcon icon-chat"></i>Request live chat</a></p>
+                </div>
+                <div class="navbar-header">
+
+                    <a class="navbar-brand" href="#">
+                        <img src="img/logoNew.png" alt=""></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">Our Filtering Partners</a></li>
+                        <li><a id="showpopup" href="#">Products & Pricing</a></li>
+                        <li><a href="ProductLicenses.aspx">My Orders</a></li>
+                        <li><a href="MyLicenses.aspx">My Licenses</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>--%>
+
+        <div class="leftNav">
+            <a href="#" class="menuToggle">
+                <img src="img/menu.png" /></a>
+            <div class="navContainer">
+                <a href="#" class="logoleft">
+                    <%--<img src="img/logo-white.png" />--%></a>
+                <ul>
+                    <li><a href="#">Our Filtering Partners</a></li>
+                    <li><a href="#" id="showpopup">Products &amp; Pricing</a></li>
+                    <li><a href="ProductLicenses.aspx">My Orders</a></li>
+                    <li><a href="MyLicenses.aspx">My Licenses</a></li>
+                </ul>
+            </div>
+        </div>
+        <header id="header" class="clearfix">
+            <div class="container">
+                <a class="logo" href="https://www.netsafepro.com/">Safer Online</a>
+                <ul id="top-nav">
+                    <li><a class="selected" href="#home">Home</a></li>
+                    <li><a href="https://www.netsafepro.com/#products">Products</a></li>
+                    <li><a href="https://www.netsafepro.com/#partners">Partners</a></li>
+                    <li><a href="https://www.netsafepro.com/#mission">Mission</a></li>
+                    <li><a href="https://www.netsafepro.com/#contact">Contact</a></li>
+                    <li id="accountLogin" runat="server">
+                        <span class="top-cta"><a href="SignIn.aspx">LOGIN</a></span><br>
+                        <span class="top-sign-up"><a href="SignUp.aspx">or Sign Up</a></span></li>
+                    <li id="dvWelcome" runat="server">
+                        <span class="top-cta"><a href="SignUp.aspx">My Account</a></span><br>
+                        <span class="top-sign-up"><a href="#" onserverclick="logout_ServerClick" runat="server">or Sign Out</a></span></li>
+                </ul>
+            </div>
+        </header>
+        <%-- <div class="welcomeBar" id="dvWelcome" runat="server">
+            <div class="container">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-darkBlue" runat="server" onserverclick="logout_ServerClick">Logout</button>
+                </div>
+                <h1>Welcome 
+                    <label id="lblUserName" style="font-weight: 100;" runat="server"></label>
+                </h1>
+            </div>
+        </div>--%>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="hider" style="display: none;"></div>
+        <div class="container margin-top30 formContainer" id="popup_box" style="display: none; background-color: #e3e3e3; border-radius: 10px; padding: 0px;">
+
+            <div class="popupHeader">
+                <ul class="nav navbar-nav" id="ulProducts">
+                    <li style="width: 74%;"><a href="#">Product</a></li>
+                    <li style="width: 14%;"><a href="#">Price</a></li>
+                    <li style="width: 11%;"><a id="buttonClose" style="cursor: pointer; float: right;">X</a></li>
+                </ul>
+            </div>
+            <div id="productsList">
+                <ul class="nav navbar-nav">
+                    <li style="width: 74%;"><a href="#">First Computer</a></li>
+                    <li style="width: 14%;"><a href="#">$12</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li style="width: 74%;"><a href="#">Second Computer</a></li>
+                    <li style="width: 14%;"><a href="#">$10</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li style="width: 74%;"><a href="#">Additional Computer</a></li>
+                    <li style="width: 14%;"><a href="#">$7</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li style="width: 74%;"><a href="#">Devices</a></li>
+                    <li style="width: 14%;"><a href="#">$10</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <footer>
+            <div class="container">
+                <div class="pull-right">
+                    <ul>
+                        <li><a href="https://www.netsafepro.com/#products">Products</a></li>
+                        <li><a href="https://www.netsafepro.com/#partners">Partners</a></li>
+                        <li><a href="https://www.netsafepro.com/#mission">Mission</a></li>
+                        <li><a href="https://www.netsafepro.com/Index1.html">Contact</a></li>
+                        <%--<li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Mission</a></li>
+                        <li><a href="#">Help</a></li>--%>
+                    </ul>
+                </div>
+                <p>&copy; NetSafe 2015</p>
+            </div>
+        </footer>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function (b, o, i, l, e, r) {
+                b.GoogleAnalyticsObject = l; b[l] || (b[l] =
+                function () { (b[l].q = b[l].q || []).push(arguments) }); b[l].l = +new Date;
+                e = o.createElement(i); r = o.getElementsByTagName(i)[0];
+                e.src = '//www.google-analytics.com/analytics.js';
+                r.parentNode.insertBefore(e, r)
+            }(window, document, 'script', 'ga'));
+            ga('create', 'UA-XXXXX-X', 'auto'); ga('send', 'pageview');
+        </script>
+    </form>
+</body>
+</html>

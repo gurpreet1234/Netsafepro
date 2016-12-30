@@ -1,0 +1,15 @@
+D:\Gurpreet\Projects\Abe\Safenetpro\Safenetpro_new\SafenetproModel_new\bin\Debug\SafenetproModel_new.dll.config
+D:\Gurpreet\Projects\Abe\Safenetpro\Safenetpro_new\SafenetproModel_new\bin\Debug\SafenetproModel_new.dll
+D:\Gurpreet\Projects\Abe\Safenetpro\Safenetpro_new\SafenetproModel_new\bin\Debug\SafenetproModel_new.pdb
+D:\Gurpreet\Projects\Abe\Safenetpro\Safenetpro_new\SafenetproModel_new\bin\Debug\EntityFramework.dll
+D:\Gurpreet\Projects\Abe\Safenetpro\Safenetpro_new\SafenetproModel_new\bin\Debug\EntityFramework.xml
+D:\Gurpreet\Projects\Abe\Safenetpro\Safenetpro_new\SafenetproModel_new\obj\Debug\SafenetproModel_new.dll
+D:\Gurpreet\Projects\Abe\Safenetpro\Safenetpro_new\SafenetproModel_new\obj\Debug\SafenetproModel_new.pdb
+D:\Gurpreet\Projects\Abe\Safenetpro\Safenetpro_new\SafenetproModel_new\obj\Debug\SafenetproModel_new.csprojResolveAssemblyReference.cache
+D:\Gurpreet\Projects\Abe\Safenetpro\GIT\Netsafepro\SafenetproModel_new\bin\Debug\SafenetproModel_new.dll.config
+D:\Gurpreet\Projects\Abe\Safenetpro\GIT\Netsafepro\SafenetproModel_new\bin\Debug\SafenetproModel_new.dll
+D:\Gurpreet\Projects\Abe\Safenetpro\GIT\Netsafepro\SafenetproModel_new\bin\Debug\SafenetproModel_new.pdb
+D:\Gurpreet\Projects\Abe\Safenetpro\GIT\Netsafepro\SafenetproModel_new\bin\Debug\EntityFramework.dll
+D:\Gurpreet\Projects\Abe\Safenetpro\GIT\Netsafepro\SafenetproModel_new\bin\Debug\EntityFramework.xml
+D:\Gurpreet\Projects\Abe\Safenetpro\GIT\Netsafepro\SafenetproModel_new\obj\Debug\SafenetproModel_new.dll
+D:\Gurpreet\Projects\Abe\Safenetpro\GIT\Netsafepro\SafenetproModel_new\obj\Debug\SafenetproModel_new.pdb

@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="netsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Actions">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Action" Type="varchar" MaxLength="500" />
+    <Property Name="RuleTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdminUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="250" />
+    <Property Name="FirstName" Type="varchar" MaxLength="500" />
+    <Property Name="LastName" Type="varchar" MaxLength="500" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="AllRules_W_ID">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RuleOrder" Type="int" Nullable="false" />
+    <Property Name="ActionId" Type="int" Nullable="false" />
+    <Property Name="RuleTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="500" />
+    <Property Name="RuleTypeId" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" />
+  </EntityType>
+  <EntityType Name="CategoryToRule">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RuleOrderId" Type="int" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="RuleTypeId" Type="int" Nullable="false" />
+    <Property Name="AllRule_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="CustomerGroups">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+    <Property Name="GroupId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="500" />
+    <Property Name="Email" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Display_Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="Section" Type="int" Nullable="false" />
+    <Property Name="DisplayId" Type="int" Nullable="false" />
+    <Property Name="Display" Type="bit" Nullable="false" />
+    <Property Name="RuleTypeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GroupName" Type="varchar" MaxLength="500" />
+    <Property Name="GroupType" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="GroupToRule_W_ID">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RuleOrder" Type="int" Nullable="false" />
+    <Property Name="GroupId" Type="int" Nullable="false" />
+    <Property Name="RuleTypeId" Type="int" Nullable="false" />
+    <Property Name="AllRule_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Organizations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrgName" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductPrice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductType" Type="int" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="MonthlyPrice" Type="varchar" MaxLength="100" />
+    <Property Name="YearlyPrice" Type="varchar" MaxLength="100" />
+    <Property Name="AdditionalLicenseCount" Type="int" />
+    <Property Name="AdditionalLicenseMonthlyPrice" Type="varchar" MaxLength="100" />
+    <Property Name="AdditionalLicenseYearlyPrice" Type="varchar" MaxLength="100" />
+    <Property Name="SecondMasterMonthlyPrice" Type="varchar" MaxLength="100" />
+    <Property Name="SecondmasterYearlyPrice" Type="varchar" MaxLength="100" />
+    <Property Name="SettingType" Type="int" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="1500" />
+    <Property Name="MonthlyPrice" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ProductToUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="OperatingSystem" Type="varchar" MaxLength="50" />
+    <Property Name="Location" Type="varchar" MaxLength="100" />
+    <Property Name="PrimaryUserName" Type="varchar" MaxLength="500" />
+    <Property Name="Settings" Type="int" />
+    <Property Name="PhoneOS" Type="varchar" MaxLength="50" />
+    <Property Name="Manufacturer" Type="varchar" MaxLength="200" />
+    <Property Name="PrimaryUser" Type="varchar" MaxLength="500" />
+    <Property Name="Usage" Type="varchar" MaxLength="100" />
+    <Property Name="ZscalerLogin" Type="varchar" MaxLength="200" />
+    <Property Name="Paid" Type="bit" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="LastPaymentDate" Type="datetime" />
+    <Property Name="MonthlyPrice" Type="varchar" MaxLength="100" />
+    <Property Name="YearlyPrice" Type="varchar" MaxLength="100" />
+    <Property Name="AddCount" Type="int" />
+    <Property Name="PaymentPeriod" Type="int" />
+    <Property Name="LicenseStartDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ProductToUserChange">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="ProductUserId" Type="int" />
+    <Property Name="OperatingSystem" Type="varchar" MaxLength="50" />
+    <Property Name="Location" Type="varchar" MaxLength="100" />
+    <Property Name="PrimaryUserName" Type="varchar" MaxLength="500" />
+    <Property Name="Settings" Type="int" />
+    <Property Name="PhoneOS" Type="varchar" MaxLength="50" />
+    <Property Name="Manufacturer" Type="varchar" MaxLength="200" />
+    <Property Name="PrimaryUser" Type="varchar" MaxLength="500" />
+    <Property Name="Usage" Type="varchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Change" Type="int" />
+  </EntityType>
+  <EntityType Name="Rule_Types">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RuleType" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="torahbletlech_docs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="2000" />
+    <Property Name="PDFFilePath" Type="nvarchar" MaxLength="1500" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="1500" />
+    <Property Name="DocStatus" Type="int" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UniqDisplayName">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DisplayName" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="URLToDevice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="URL" Type="varchar" MaxLength="2100" />
+    <Property Name="ProductToUser" Type="int" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="URLToDeviceChange">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="URL" Type="varchar" MaxLength="2100" />
+    <Property Name="ProductToUserChange" Type="int" />
+  </EntityType>
+  <EntityType Name="UserBillingAddress">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="500" />
+    <Property Name="Address" Type="varchar" MaxLength="2000" />
+    <Property Name="City" Type="varchar" MaxLength="200" />
+    <Property Name="State" Type="varchar" MaxLength="200" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="100" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="Address2" Type="varchar(max)" />
+    <Property Name="City" Type="varchar" MaxLength="200" />
+    <Property Name="State" Type="varchar" MaxLength="200" />
+    <Property Name="Zip" Type="varchar" MaxLength="100" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="CellPhone" Type="varchar" MaxLength="50" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="250" />
+    <Property Name="BName" Type="varchar" MaxLength="500" />
+    <Property Name="BAddress" Type="varchar(max)" />
+    <Property Name="BCity" Type="varchar" MaxLength="200" />
+    <Property Name="BState" Type="varchar" MaxLength="200" />
+    <Property Name="BZip" Type="varchar" MaxLength="100" />
+    <Property Name="BPhone" Type="varchar" MaxLength="50" />
+    <Property Name="BCellPhone" Type="varchar" MaxLength="50" />
+    <Property Name="BFax" Type="varchar" MaxLength="50" />
+    <Property Name="BEmailAddress" Type="varchar" MaxLength="250" />
+    <Property Name="ProfileType" Type="int" />
+    <Property Name="CardDigits" Type="int" />
+    <Property Name="BusinessInfo" Type="bit" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="PasswordReset" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="UserToOrg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="OrgId" Type="int" Nullable="false" />
+    <Property Name="OrgOther" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <Association Name="FK__URLToDevi__Produ__48CFD27E">
+    <End Role="ProductToUser" Type="Self.ProductToUser" Multiplicity="0..1" />
+    <End Role="URLToDevice" Type="Self.URLToDevice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductToUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="URLToDevice">
+        <PropertyRef Name="ProductToUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__URLToDevi__Produ__628FA481">
+    <End Role="ProductToUser" Type="Self.ProductToUser" Multiplicity="0..1" />
+    <End Role="URLToDevice" Type="Self.URLToDevice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductToUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="URLToDevice">
+        <PropertyRef Name="ProductToUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Actions_Rule_Types">
+    <End Role="Rule_Types" Type="Self.Rule_Types" Multiplicity="1" />
+    <End Role="Actions" Type="Self.Actions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule_Types">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Actions">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AllRules_W_ID_Actions">
+    <End Role="Actions" Type="Self.Actions" Multiplicity="1" />
+    <End Role="AllRules_W_ID" Type="Self.AllRules_W_ID" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AllRules_W_ID">
+        <PropertyRef Name="ActionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AllRules_W_ID_Rule_Types">
+    <End Role="Rule_Types" Type="Self.Rule_Types" Multiplicity="1" />
+    <End Role="AllRules_W_ID" Type="Self.AllRules_W_ID" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule_Types">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AllRules_W_ID">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Category_Rule_Types">
+    <End Role="Rule_Types" Type="Self.Rule_Types" Multiplicity="1" />
+    <End Role="Category" Type="Self.Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule_Types">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryToRule_AllRules_W_ID">
+    <End Role="AllRules_W_ID" Type="Self.AllRules_W_ID" Multiplicity="0..1" />
+    <End Role="CategoryToRule" Type="Self.CategoryToRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AllRules_W_ID">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CategoryToRule">
+        <PropertyRef Name="AllRule_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryToRule_Rule_Types">
+    <End Role="Rule_Types" Type="Self.Rule_Types" Multiplicity="1" />
+    <End Role="CategoryToRule" Type="Self.CategoryToRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule_Types">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CategoryToRule">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerGroups_Groups">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+    <End Role="CustomerGroups" Type="Self.CustomerGroups" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerGroups">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Display_Category_Rule_Types">
+    <End Role="Rule_Types" Type="Self.Rule_Types" Multiplicity="1" />
+    <End Role="Display_Category" Type="Self.Display_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule_Types">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Display_Category">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Display_Category_UniqDisplayName">
+    <End Role="UniqDisplayName" Type="Self.UniqDisplayName" Multiplicity="1" />
+    <End Role="Display_Category" Type="Self.Display_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UniqDisplayName">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Display_Category">
+        <PropertyRef Name="DisplayId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupToRule_W_ID_AllRules_W_ID">
+    <End Role="AllRules_W_ID" Type="Self.AllRules_W_ID" Multiplicity="1" />
+    <End Role="GroupToRule_W_ID" Type="Self.GroupToRule_W_ID" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AllRules_W_ID">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GroupToRule_W_ID">
+        <PropertyRef Name="AllRule_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupToRule_W_ID_Groups">
+    <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+    <End Role="GroupToRule_W_ID" Type="Self.GroupToRule_W_ID" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GroupToRule_W_ID">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupToRule_W_ID_Rule_Types">
+    <End Role="Rule_Types" Type="Self.Rule_Types" Multiplicity="1" />
+    <End Role="GroupToRule_W_ID" Type="Self.GroupToRule_W_ID" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule_Types">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GroupToRule_W_ID">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductToUser_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="ProductToUser" Type="Self.ProductToUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductToUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserProfile_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UserProfile" Type="Self.UserProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserToOrg_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="UserToOrg" Type="Self.UserToOrg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserToOrg">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="netsModelStoreContainer">
+    <EntitySet Name="Actions" EntityType="Self.Actions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminUsers" EntityType="Self.AdminUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AllRules_W_ID" EntityType="Self.AllRules_W_ID" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CategoryToRule" EntityType="Self.CategoryToRule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerGroups" EntityType="Self.CustomerGroups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Display_Category" EntityType="Self.Display_Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GroupToRule_W_ID" EntityType="Self.GroupToRule_W_ID" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Organizations" EntityType="Self.Organizations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductPrice" EntityType="Self.ProductPrice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductToUser" EntityType="Self.ProductToUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductToUserChange" EntityType="Self.ProductToUserChange" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rule_Types" EntityType="Self.Rule_Types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="torahbletlech_docs" EntityType="Self.torahbletlech_docs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UniqDisplayName" EntityType="Self.UniqDisplayName" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="URLToDevice" EntityType="Self.URLToDevice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="URLToDeviceChange" EntityType="Self.URLToDeviceChange" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserBillingAddress" EntityType="Self.UserBillingAddress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserProfile" EntityType="Self.UserProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserToOrg" EntityType="Self.UserToOrg" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__URLToDevi__Produ__48CFD27E" Association="Self.FK__URLToDevi__Produ__48CFD27E">
+      <End Role="ProductToUser" EntitySet="ProductToUser" />
+      <End Role="URLToDevice" EntitySet="URLToDevice" />
+    </AssociationSet>
+    <AssociationSet Name="FK__URLToDevi__Produ__628FA481" Association="Self.FK__URLToDevi__Produ__628FA481">
+      <End Role="ProductToUser" EntitySet="ProductToUser" />
+      <End Role="URLToDevice" EntitySet="URLToDevice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Actions_Rule_Types" Association="Self.FK_Actions_Rule_Types">
+      <End Role="Rule_Types" EntitySet="Rule_Types" />
+      <End Role="Actions" EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AllRules_W_ID_Actions" Association="Self.FK_AllRules_W_ID_Actions">
+      <End Role="Actions" EntitySet="Actions" />
+      <End Role="AllRules_W_ID" EntitySet="AllRules_W_ID" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AllRules_W_ID_Rule_Types" Association="Self.FK_AllRules_W_ID_Rule_Types">
+      <End Role="Rule_Types" EntitySet="Rule_Types" />
+      <End Role="AllRules_W_ID" EntitySet="AllRules_W_ID" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_Rule_Types" Association="Self.FK_Category_Rule_Types">
+      <End Role="Rule_Types" EntitySet="Rule_Types" />
+      <End Role="Category" EntitySet="Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryToRule_AllRules_W_ID" Association="Self.FK_CategoryToRule_AllRules_W_ID">
+      <End Role="AllRules_W_ID" EntitySet="AllRules_W_ID" />
+      <End Role="CategoryToRule" EntitySet="CategoryToRule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryToRule_Rule_Types" Association="Self.FK_CategoryToRule_Rule_Types">
+      <End Role="Rule_Types" EntitySet="Rule_Types" />
+      <End Role="CategoryToRule" EntitySet="CategoryToRule" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerGroups_Groups" Association="Self.FK_CustomerGroups_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="CustomerGroups" EntitySet="CustomerGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Display_Category_Rule_Types" Association="Self.FK_Display_Category_Rule_Types">
+      <End Role="Rule_Types" EntitySet="Rule_Types" />
+      <End Role="Display_Category" EntitySet="Display_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Display_Category_UniqDisplayName" Association="Self.FK_Display_Category_UniqDisplayName">
+      <End Role="UniqDisplayName" EntitySet="UniqDisplayName" />
+      <End Role="Display_Category" EntitySet="Display_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupToRule_W_ID_AllRules_W_ID" Association="Self.FK_GroupToRule_W_ID_AllRules_W_ID">
+      <End Role="AllRules_W_ID" EntitySet="AllRules_W_ID" />
+      <End Role="GroupToRule_W_ID" EntitySet="GroupToRule_W_ID" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupToRule_W_ID_Groups" Association="Self.FK_GroupToRule_W_ID_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="GroupToRule_W_ID" EntitySet="GroupToRule_W_ID" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupToRule_W_ID_Rule_Types" Association="Self.FK_GroupToRule_W_ID_Rule_Types">
+      <End Role="Rule_Types" EntitySet="Rule_Types" />
+      <End Role="GroupToRule_W_ID" EntitySet="GroupToRule_W_ID" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductToUser_Users" Association="Self.FK_ProductToUser_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="ProductToUser" EntitySet="ProductToUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserProfile_Users" Association="Self.FK_UserProfile_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserProfile" EntitySet="UserProfile" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserToOrg_Users" Association="Self.FK_UserToOrg_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="UserToOrg" EntitySet="UserToOrg" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Gurpreet\Projects\Abe\Safenetpro\Published\Safenetpro_new\17Aug</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Admin/admin.Master">
+      <publishTime>07/08/2016 13:37:07</publishTime>
+    </File>
+    <File Include="Admin/Customers.aspx">
+      <publishTime>12/30/2016 17:02:09</publishTime>
+    </File>
+    <File Include="Admin/Login.aspx">
+      <publishTime>10/21/2015 16:13:33</publishTime>
+    </File>
+    <File Include="Admin/Products.aspx">
+      <publishTime>11/15/2016 17:24:44</publishTime>
+    </File>
+    <File Include="Admin/Profile.aspx">
+      <publishTime>10/21/2015 17:59:43</publishTime>
+    </File>
+    <File Include="Admin/RulePermissions.aspx">
+      <publishTime>10/26/2015 13:07:04</publishTime>
+    </File>
+    <File Include="BillingPayment.aspx">
+      <publishTime>08/17/2016 17:42:33</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>08/17/2015 13:21:16</publishTime>
+    </File>
+    <File Include="bin/AuthorizeNet.dll">
+      <publishTime>05/22/2016 14:22:50</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>07/06/2016 00:53:23</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>10/02/2013 12:10:10</publishTime>
+    </File>
+    <File Include="bin/Safenetpro.dll">
+      <publishTime>12/30/2016 17:22:54</publishTime>
+    </File>
+    <File Include="bin/Safenetpro.XmlSerializers.dll">
+      <publishTime>12/30/2016 17:23:04</publishTime>
+    </File>
+    <File Include="bin/SafenetproAPI.dll">
+      <publishTime>07/06/2016 00:36:41</publishTime>
+    </File>
+    <File Include="bin/SafenetproModel.dll">
+      <publishTime>07/05/2016 20:33:26</publishTime>
+    </File>
+    <File Include="bin/SafenetproModel_new.dll">
+      <publishTime>10/03/2016 19:21:18</publishTime>
+    </File>
+    <File Include="bin/Safenetpro_new.dll">
+      <publishTime>12/30/2016 17:22:44</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/06/2016 00:44:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>08/13/2015 16:53:39</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>07/06/2016 00:44:11</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>07/06/2016 00:44:06</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>07/06/2016 00:44:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>07/06/2016 00:44:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>07/06/2016 00:44:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>07/06/2016 00:44:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>07/06/2016 00:44:03</publishTime>
+    </File>
+    <File Include="css/bootstrap-theme.css">
+      <publishTime>09/03/2015 13:15:02</publishTime>
+    </File>
+    <File Include="css/bootstrap-theme.css.map">
+      <publishTime>09/03/2015 13:15:03</publishTime>
+    </File>
+    <File Include="css/bootstrap-theme.min.css">
+      <publishTime>09/03/2015 13:14:59</publishTime>
+    </File>
+    <File Include="css/bootstrap.css">
+      <publishTime>09/03/2015 13:14:59</publishTime>
+    </File>
+    <File Include="css/bootstrap.css.map">
+      <publishTime>09/03/2015 13:15:00</publishTime>
+    </File>
+    <File Include="css/bootstrap.min.css">
+      <publishTime>09/21/2015 18:53:05</publishTime>
+    </File>
+    <File Include="css/main.css">
+      <publishTime>08/31/2015 19:00:03</publishTime>
+    </File>
+    <File Include="css/UserPortal.css">
+      <publishTime>11/21/2016 23:53:26</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/05/2016 17:36:44</publishTime>
+    </File>
+    <File Include="img/ajax-loader.gif">
+      <publishTime>08/18/2015 16:43:19</publishTime>
+    </File>
+    <File Include="img/Amex.gif">
+      <publishTime>10/01/2015 16:31:52</publishTime>
+    </File>
+    <File Include="img/collapse_blue.jpg">
+      <publishTime>08/21/2015 18:14:56</publishTime>
+    </File>
+    <File Include="img/desktop.png">
+      <publishTime>09/03/2015 12:45:12</publishTime>
+    </File>
+    <File Include="img/Disc.gif">
+      <publishTime>10/01/2015 16:31:52</publishTime>
+    </File>
+    <File Include="img/error.png">
+      <publishTime>09/16/2015 15:20:56</publishTime>
+    </File>
+    <File Include="img/expand_blue.jpg">
+      <publishTime>08/21/2015 18:15:03</publishTime>
+    </File>
+    <File Include="img/iconSprite.png">
+      <publishTime>10/21/2015 13:42:21</publishTime>
+    </File>
+    <File Include="img/iPhone.png">
+      <publishTime>09/03/2015 12:45:13</publishTime>
+    </File>
+    <File Include="img/logoBlack.png">
+      <publishTime>09/03/2015 12:45:13</publishTime>
+    </File>
+    <File Include="img/logoNew.png">
+      <publishTime>09/03/2015 12:45:13</publishTime>
+    </File>
+    <File Include="img/MC.gif">
+      <publishTime>10/01/2015 16:31:53</publishTime>
+    </File>
+    <File Include="img/notice.png">
+      <publishTime>09/16/2015 15:21:35</publishTime>
+    </File>
+    <File Include="img/parrerenLeft.jpg">
+      <publishTime>10/21/2015 13:39:23</publishTime>
+    </File>
+    <File Include="img/prodDesktop.jpg">
+      <publishTime>09/20/2015 13:05:32</publishTime>
+    </File>
+    <File Include="img/prodLaptop.jpg">
+      <publishTime>09/20/2015 13:05:32</publishTime>
+    </File>
+    <File Include="img/rightarrow.jpg">
+      <publishTime>09/03/2015 12:45:13</publishTime>
+    </File>
+    <File Include="img/rightArrow.png">
+      <publishTime>09/20/2015 13:05:32</publishTime>
+    </File>
+    <File Include="img/smallIcon.png">
+      <publishTime>09/20/2015 13:05:32</publishTime>
+    </File>
+    <File Include="img/success.png">
+      <publishTime>09/16/2015 15:21:05</publishTime>
+    </File>
+    <File Include="img/tab_active.gif">
+      <publishTime>08/14/2015 16:30:03</publishTime>
+    </File>
+    <File Include="img/tab_hover.gif">
+      <publishTime>08/14/2015 16:30:08</publishTime>
+    </File>
+    <File Include="img/tab_Inactive.gif">
+      <publishTime>08/14/2015 16:30:14</publishTime>
+    </File>
+    <File Include="img/tab_left_active.gif">
+      <publishTime>08/14/2015 16:39:15</publishTime>
+    </File>
+    <File Include="img/tab_left_hover.gif">
+      <publishTime>08/14/2015 16:39:22</publishTime>
+    </File>
+    <File Include="img/tab_left_inactive.gif">
+      <publishTime>08/14/2015 16:39:34</publishTime>
+    </File>
+    <File Include="img/tab_right_active.gif">
+      <publishTime>08/14/2015 16:39:10</publishTime>
+    </File>
+    <File Include="img/tab_right_hover.gif">
+      <publishTime>08/14/2015 16:39:28</publishTime>
+    </File>
+    <File Include="img/tab_right_inactive.gif">
+      <publishTime>08/14/2015 16:39:40</publishTime>
+    </File>
+    <File Include="img/tooltip_icon.gif">
+      <publishTime>08/17/2015 17:04:44</publishTime>
+    </File>
+    <File Include="img/V.gif">
+      <publishTime>10/01/2015 16:31:53</publishTime>
+    </File>
+    <File Include="img/warning.png">
+      <publishTime>09/16/2015 15:21:20</publishTime>
+    </File>
+    <File Include="Index1.html">
+      <publishTime>08/17/2016 20:06:15</publishTime>
+    </File>
+    <File Include="js/jquery.tablesorter.js">
+      <publishTime>10/23/2015 12:35:10</publishTime>
+    </File>
+    <File Include="js/main.js">
+      <publishTime>08/14/2015 11:55:38</publishTime>
+    </File>
+    <File Include="js/setup.js">
+      <publishTime>07/18/2016 23:04:28</publishTime>
+    </File>
+    <File Include="js/togglePassword.js">
+      <publishTime>05/18/2016 21:29:44</publishTime>
+    </File>
+    <File Include="js/vendor/bootstrap.js">
+      <publishTime>08/14/2015 11:55:38</publishTime>
+    </File>
+    <File Include="js/vendor/bootstrap.min.js">
+      <publishTime>08/14/2015 11:55:38</publishTime>
+    </File>
+    <File Include="js/vendor/jquery-1.11.2.min.js">
+      <publishTime>08/14/2015 11:55:38</publishTime>
+    </File>
+    <File Include="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js">
+      <publishTime>08/14/2015 11:55:38</publishTime>
+    </File>
+    <File Include="js/vendor/npm.js">
+      <publishTime>08/14/2015 11:55:38</publishTime>
+    </File>
+    <File Include="Main.Master">
+      <publishTime>08/17/2016 20:09:27</publishTime>
+    </File>
+    <File Include="MyLicenses.aspx">
+      <publishTime>07/27/2016 01:30:02</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/22/2016 14:22:54</publishTime>
+    </File>
+    <File Include="Payment.aspx">
+      <publishTime>12/30/2016 14:02:35</publishTime>
+    </File>
+    <File Include="ProductLicenses.aspx">
+      <publishTime>07/27/2016 01:30:21</publishTime>
+    </File>
+    <File Include="ResetPassword.aspx">
+      <publishTime>07/08/2016 16:47:19</publishTime>
+    </File>
+    <File Include="RulePermissions.aspx">
+      <publishTime>09/03/2015 12:49:40</publishTime>
+    </File>
+    <File Include="Setup.aspx">
+      <publishTime>07/04/2016 10:40:51</publishTime>
+    </File>
+    <File Include="SignIn.aspx">
+      <publishTime>08/17/2016 18:22:17</publishTime>
+    </File>
+    <File Include="SignUp.aspx">
+      <publishTime>06/28/2016 23:11:52</publishTime>
+    </File>
+    <File Include="Test.aspx">
+      <publishTime>07/08/2016 13:41:22</publishTime>
+    </File>
+    <File Include="ThankYou.aspx">
+      <publishTime>07/07/2016 16:18:32</publishTime>
+    </File>
+    <File Include="Typescript/CombineTypescript">
+      <publishTime>08/30/2015 13:02:04</publishTime>
+    </File>
+    <File Include="Typescript/CombineTypescript.js">
+      <publishTime>12/30/2016 17:22:51</publishTime>
+    </File>
+    <File Include="Typescript/RulePermissions.js">
+      <publishTime>08/30/2015 12:49:29</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/AccountDetails1.datasource">
+      <publishTime>07/01/2016 23:36:38</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/Bank1.datasource">
+      <publishTime>07/01/2016 23:36:37</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/BatchSearchResult1.datasource">
+      <publishTime>07/01/2016 23:36:35</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/BatchStatus1.datasource">
+      <publishTime>07/01/2016 23:36:36</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/BatchUploadStatus1.datasource">
+      <publishTime>07/01/2016 23:36:38</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/CheckTrace1.datasource">
+      <publishTime>07/01/2016 23:36:37</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/CurrencyConversion1.datasource">
+      <publishTime>07/01/2016 23:36:38</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/CurrencyObject1.datasource">
+      <publishTime>07/01/2016 23:36:38</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/CustomerObject1.datasource">
+      <publishTime>07/01/2016 23:36:34</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/CustomerSearchResult1.datasource">
+      <publishTime>07/01/2016 23:36:34</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/FieldValue1.datasource">
+      <publishTime>07/01/2016 23:36:35</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/PaymentMethod1.datasource">
+      <publishTime>07/01/2016 23:36:35</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/Product1.datasource">
+      <publishTime>07/01/2016 23:36:34</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/ProductCategory1.datasource">
+      <publishTime>07/01/2016 23:36:39</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/ProductInventory1.datasource">
+      <publishTime>07/01/2016 23:36:34</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/ProductSearchResult1.datasource">
+      <publishTime>07/01/2016 23:36:33</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/Receipt1.datasource">
+      <publishTime>07/01/2016 23:36:39</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/Reference.map">
+      <publishTime>06/07/2016 17:49:06</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/SyncLog1.datasource">
+      <publishTime>07/01/2016 23:36:36</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/SystemInfo1.datasource">
+      <publishTime>07/01/2016 23:36:36</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/TransactionObject1.datasource">
+      <publishTime>07/01/2016 23:36:37</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/TransactionResponse1.datasource">
+      <publishTime>07/01/2016 23:36:37</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.live/TransactionSearchResult1.datasource">
+      <publishTime>07/01/2016 23:36:36</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/AccountDetails.datasource">
+      <publishTime>06/07/2016 17:49:23</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/Bank.datasource">
+      <publishTime>06/07/2016 17:49:22</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/BatchSearchResult.datasource">
+      <publishTime>06/07/2016 17:49:20</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/BatchStatus.datasource">
+      <publishTime>06/07/2016 17:49:21</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/BatchUploadStatus.datasource">
+      <publishTime>06/07/2016 17:49:23</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/CheckTrace.datasource">
+      <publishTime>06/07/2016 17:49:22</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/CurrencyConversion.datasource">
+      <publishTime>06/07/2016 17:49:23</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/CurrencyObject.datasource">
+      <publishTime>06/07/2016 17:49:23</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/CustomerObject.datasource">
+      <publishTime>06/07/2016 17:49:20</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/CustomerSearchResult.datasource">
+      <publishTime>06/07/2016 17:49:19</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/FieldValue.datasource">
+      <publishTime>06/07/2016 17:49:20</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/PaymentMethod.datasource">
+      <publishTime>06/07/2016 17:49:20</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/Product.datasource">
+      <publishTime>06/07/2016 17:49:19</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/ProductCategory.datasource">
+      <publishTime>06/07/2016 17:49:24</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/ProductInventory.datasource">
+      <publishTime>06/07/2016 17:49:19</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/ProductSearchResult.datasource">
+      <publishTime>06/07/2016 17:49:19</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/Receipt.datasource">
+      <publishTime>06/07/2016 17:49:24</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/Reference.map">
+      <publishTime>06/07/2016 17:49:06</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/SyncLog.datasource">
+      <publishTime>06/07/2016 17:49:21</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/SystemInfo.datasource">
+      <publishTime>06/07/2016 17:49:21</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/TransactionObject.datasource">
+      <publishTime>06/07/2016 17:49:22</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/TransactionResponse.datasource">
+      <publishTime>06/07/2016 17:49:22</publishTime>
+    </File>
+    <File Include="Web References/com.usaepay.sandbox/TransactionSearchResult.datasource">
+      <publishTime>06/07/2016 17:49:21</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/08/2016 17:14:52</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

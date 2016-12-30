@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="Safenetpro.Admin.admin" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="../css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="../css/UserPortal.css" />
+    <script src="../Typescript/CombineTypescript.js"></script>
+    <script src="../js/vendor/jquery-1.11.2.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <nav class="navbar navbg navbar-fixed-top" role="navigation">
+            <div class="container" style="width: 90%;">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img src="../img/logoNew.png" alt=""></a>
+                </div>
+            </div>
+        </nav>
+        <div class="welcomeBar" id="dvWelcome" runat="server">
+            <div class="container">
+                <h1>Welcome 
+                    <label id="lblUserName" style="font-weight: 100;" runat="server"></label>
+                </h1>
+            </div>
+        </div>
+        <div>
+            <div class="leftbar" id="dvLeftBar" runat="server">               
+                <div>
+                    <div class="leftmenu" id="dvProfile" runat="server">
+                        <a href="Profile.aspx">
+                            <span class="profile"></span>Profile
+                        </a>
+                    </div>
+                    <div class="leftmenu" id="dvCus" runat="server">
+                        <a href="Customers.aspx">
+                            <span class="profile"></span>Customers
+                        </a>
+                    </div>
+                    <div class="leftmenu" id="dvProduct" runat="server">
+                        <a href="Products.aspx">
+                            <span class="uploadoc"></span>Products
+                        </a>
+                    </div>
+                    <div class="leftmenu" id="dvReports" runat="server">
+                        <a href="#">
+                            <span class="uploadoc"></span>Reports
+                        </a>
+                    </div>
+                    <div class="leftmenu" id="dvRulePermissions" runat="server">
+                        <a href="RulePermissions.aspx">
+                            <span class="uploadoc"></span>Permissions
+                        </a>
+                    </div>
+                    <div class="leftmenu">
+                        <a href="#" runat="server" onserverclick="logout_ServerClick">
+                            <span class="logout"></span>Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color: white; overflow-y: hidden;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+        
+    </form>
+</body>
+</html>

@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="netsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Action">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Action1" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="RuleTypeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Rule_Types" Relationship="Self.FK_Actions_Rule_Types" FromRole="Actions" ToRole="Rule_Types" />
+    <NavigationProperty Name="AllRules_W_ID" Relationship="Self.FK_AllRules_W_ID_Actions" FromRole="Actions" ToRole="AllRules_W_ID" />
+  </EntityType>
+  <EntityType Name="AdminUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="AllRules_W_ID">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RuleOrder" Type="Int32" Nullable="false" />
+    <Property Name="ActionId" Type="Int32" Nullable="false" />
+    <Property Name="RuleTypeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Action" Relationship="Self.FK_AllRules_W_ID_Actions" FromRole="AllRules_W_ID" ToRole="Actions" />
+    <NavigationProperty Name="Rule_Types" Relationship="Self.FK_AllRules_W_ID_Rule_Types" FromRole="AllRules_W_ID" ToRole="Rule_Types" />
+    <NavigationProperty Name="CategoryToRules" Relationship="Self.FK_CategoryToRule_AllRules_W_ID" FromRole="AllRules_W_ID" ToRole="CategoryToRule" />
+    <NavigationProperty Name="GroupToRule_W_ID" Relationship="Self.FK_GroupToRule_W_ID_AllRules_W_ID" FromRole="AllRules_W_ID" ToRole="GroupToRule_W_ID" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="RuleTypeId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" />
+    <NavigationProperty Name="Rule_Types" Relationship="Self.FK_Category_Rule_Types" FromRole="Category" ToRole="Rule_Types" />
+  </EntityType>
+  <EntityType Name="CategoryToRule">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RuleOrderId" Type="Int32" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="RuleTypeId" Type="Int32" Nullable="false" />
+    <Property Name="AllRule_ID" Type="Int32" />
+    <NavigationProperty Name="AllRules_W_ID" Relationship="Self.FK_CategoryToRule_AllRules_W_ID" FromRole="CategoryToRule" ToRole="AllRules_W_ID" />
+    <NavigationProperty Name="Rule_Types" Relationship="Self.FK_CategoryToRule_Rule_Types" FromRole="CategoryToRule" ToRole="Rule_Types" />
+  </EntityType>
+  <EntityType Name="CustomerGroup">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Group" Relationship="Self.FK_CustomerGroups_Groups" FromRole="CustomerGroups" ToRole="Groups" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Display_Category">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="Section" Type="Int32" Nullable="false" />
+    <Property Name="DisplayId" Type="Int32" Nullable="false" />
+    <Property Name="Display" Type="Boolean" Nullable="false" />
+    <Property Name="RuleTypeId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Rule_Types" Relationship="Self.FK_Display_Category_Rule_Types" FromRole="Display_Category" ToRole="Rule_Types" />
+    <NavigationProperty Name="UniqDisplayName" Relationship="Self.FK_Display_Category_UniqDisplayName" FromRole="Display_Category" ToRole="UniqDisplayName" />
+  </EntityType>
+  <EntityType Name="Group">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GroupName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="GroupType" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CustomerGroups" Relationship="Self.FK_CustomerGroups_Groups" FromRole="Groups" ToRole="CustomerGroups" />
+    <NavigationProperty Name="GroupToRule_W_ID" Relationship="Self.FK_GroupToRule_W_ID_Groups" FromRole="Groups" ToRole="GroupToRule_W_ID" />
+  </EntityType>
+  <EntityType Name="GroupToRule_W_ID">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RuleOrder" Type="Int32" Nullable="false" />
+    <Property Name="GroupId" Type="Int32" Nullable="false" />
+    <Property Name="RuleTypeId" Type="Int32" Nullable="false" />
+    <Property Name="AllRule_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AllRules_W_ID" Relationship="Self.FK_GroupToRule_W_ID_AllRules_W_ID" FromRole="GroupToRule_W_ID" ToRole="AllRules_W_ID" />
+    <NavigationProperty Name="Group" Relationship="Self.FK_GroupToRule_W_ID_Groups" FromRole="GroupToRule_W_ID" ToRole="Groups" />
+    <NavigationProperty Name="Rule_Types" Relationship="Self.FK_GroupToRule_W_ID_Rule_Types" FromRole="GroupToRule_W_ID" ToRole="Rule_Types" />
+  </EntityType>
+  <EntityType Name="Organization">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrgName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+    <Property Name="MonthlyPrice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="ProductToUserChange">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="ProductUserId" Type="Int32" />
+    <Property Name="OperatingSystem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PrimaryUserName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Settings" Type="Int32" />
+    <Property Name="PhoneOS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Manufacturer" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PrimaryUser" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Usage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Change" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Rule_Types">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RuleType" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Actions" Relationship="Self.FK_Actions_Rule_Types" FromRole="Rule_Types" ToRole="Actions" />
+    <NavigationProperty Name="AllRules_W_ID" Relationship="Self.FK_AllRules_W_ID_Rule_Types" FromRole="Rule_Types" ToRole="AllRules_W_ID" />
+    <NavigationProperty Name="Categories" Relationship="Self.FK_Category_Rule_Types" FromRole="Rule_Types" ToRole="Category" />
+    <NavigationProperty Name="CategoryToRules" Relationship="Self.FK_CategoryToRule_Rule_Types" FromRole="Rule_Types" ToRole="CategoryToRule" />
+    <NavigationProperty Name="Display_Category" Relationship="Self.FK_Display_Category_Rule_Types" FromRole="Rule_Types" ToRole="Display_Category" />
+    <NavigationProperty Name="GroupToRule_W_ID" Relationship="Self.FK_GroupToRule_W_ID_Rule_Types" FromRole="Rule_Types" ToRole="GroupToRule_W_ID" />
+  </EntityType>
+  <EntityType Name="torahbletlech_docs">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="PDFFilePath" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Name="ImagePath" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+    <Property Name="DocStatus" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="UniqDisplayName">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DisplayName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Display_Category" Relationship="Self.FK_Display_Category_UniqDisplayName" FromRole="UniqDisplayName" ToRole="Display_Category" />
+  </EntityType>
+  <EntityType Name="URLToDevice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="URL" Type="String" MaxLength="2100" FixedLength="false" Unicode="false" />
+    <Property Name="ProductToUser" Type="Int32" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="ProductToUser1" Relationship="netsModel.FK__URLToDevi__Produ__48CFD27E" FromRole="URLToDevice" ToRole="ProductToUser" />
+    <NavigationProperty Name="ProductToUser2" Relationship="netsModel.FK__URLToDevi__Produ__628FA481" FromRole="URLToDevice" ToRole="ProductToUser" />
+  </EntityType>
+  <EntityType Name="URLToDeviceChange">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="URL" Type="String" MaxLength="2100" FixedLength="false" Unicode="false" />
+    <Property Name="ProductToUserChange" Type="Int32" />
+  </EntityType>
+  <EntityType Name="UserBillingAddress">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UserProfile">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Address2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Zip" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CellPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="BName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="BAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BCity" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="BState" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="BZip" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="BPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BCellPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BFax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="BEmailAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="ProfileType" Type="Int32" />
+    <Property Name="CardDigits" Type="Int32" />
+    <Property Name="BusinessInfo" Type="Boolean" />
+    <NavigationProperty Name="User" Relationship="netsModel.FK_UserProfile_Users" FromRole="UserProfile" ToRole="User" />
+  </EntityType>
+  <EntityType Name="UserToOrg">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="OrgId" Type="Int32" Nullable="false" />
+    <Property Name="OrgOther" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User" Relationship="netsModel.FK_UserToOrg_Users" FromRole="UserToOrg" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Actions_Rule_Types">
+    <End Role="Rule_Types" Type="Self.Rule_Types" Multiplicity="1" />
+    <End Role="Actions" Type="Self.Action" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule_Types">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Actions">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AllRules_W_ID_Actions">
+    <End Role="Actions" Type="Self.Action" Multiplicity="1" />
+    <End Role="AllRules_W_ID" Type="Self.AllRules_W_ID" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Actions">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AllRules_W_ID">
+        <PropertyRef Name="ActionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AllRules_W_ID_Rule_Types">
+    <End Role="Rule_Types" Type="Self.Rule_Types" Multiplicity="1" />
+    <End Role="AllRules_W_ID" Type="Self.AllRules_W_ID" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule_Types">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="AllRules_W_ID">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryToRule_AllRules_W_ID">
+    <End Role="AllRules_W_ID" Type="Self.AllRules_W_ID" Multiplicity="0..1" />
+    <End Role="CategoryToRule" Type="Self.CategoryToRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AllRules_W_ID">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CategoryToRule">
+        <PropertyRef Name="AllRule_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupToRule_W_ID_AllRules_W_ID">
+    <End Role="AllRules_W_ID" Type="Self.AllRules_W_ID" Multiplicity="1" />
+    <End Role="GroupToRule_W_ID" Type="Self.GroupToRule_W_ID" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AllRules_W_ID">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GroupToRule_W_ID">
+        <PropertyRef Name="AllRule_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Category_Rule_Types">
+    <End Role="Rule_Types" Type="Self.Rule_Types" Multiplicity="1" />
+    <End Role="Category" Type="Self.Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule_Types">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CategoryToRule_Rule_Types">
+    <End Role="Rule_Types" Type="Self.Rule_Types" Multiplicity="1" />
+    <End Role="CategoryToRule" Type="Self.CategoryToRule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule_Types">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CategoryToRule">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerGroups_Groups">
+    <End Role="Groups" Type="Self.Group" Multiplicity="1" />
+    <End Role="CustomerGroups" Type="Self.CustomerGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerGroups">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Display_Category_Rule_Types">
+    <End Role="Rule_Types" Type="Self.Rule_Types" Multiplicity="1" />
+    <End Role="Display_Category" Type="Self.Display_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule_Types">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Display_Category">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Display_Category_UniqDisplayName">
+    <End Role="UniqDisplayName" Type="Self.UniqDisplayName" Multiplicity="1" />
+    <End Role="Display_Category" Type="Self.Display_Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UniqDisplayName">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Display_Category">
+        <PropertyRef Name="DisplayId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupToRule_W_ID_Groups">
+    <End Role="Groups" Type="Self.Group" Multiplicity="1" />
+    <End Role="GroupToRule_W_ID" Type="Self.GroupToRule_W_ID" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Groups">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GroupToRule_W_ID">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupToRule_W_ID_Rule_Types">
+    <End Role="Rule_Types" Type="Self.Rule_Types" Multiplicity="1" />
+    <End Role="GroupToRule_W_ID" Type="Self.GroupToRule_W_ID" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rule_Types">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="GroupToRule_W_ID">
+        <PropertyRef Name="RuleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="netsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Actions" EntityType="Self.Action" />
+    <EntitySet Name="AdminUsers" EntityType="Self.AdminUser" />
+    <EntitySet Name="AllRules_W_ID" EntityType="Self.AllRules_W_ID" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="CategoryToRules" EntityType="Self.CategoryToRule" />
+    <EntitySet Name="CustomerGroups" EntityType="Self.CustomerGroup" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="Display_Category" EntityType="Self.Display_Category" />
+    <EntitySet Name="Groups" EntityType="Self.Group" />
+    <EntitySet Name="GroupToRule_W_ID" EntityType="Self.GroupToRule_W_ID" />
+    <EntitySet Name="Organizations" EntityType="Self.Organization" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="ProductToUserChanges" EntityType="Self.ProductToUserChange" />
+    <EntitySet Name="Rule_Types" EntityType="Self.Rule_Types" />
+    <EntitySet Name="torahbletlech_docs" EntityType="Self.torahbletlech_docs" />
+    <EntitySet Name="UniqDisplayNames" EntityType="Self.UniqDisplayName" />
+    <EntitySet Name="URLToDevices" EntityType="Self.URLToDevice" />
+    <EntitySet Name="URLToDeviceChanges" EntityType="Self.URLToDeviceChange" />
+    <EntitySet Name="UserBillingAddresses" EntityType="Self.UserBillingAddress" />
+    <EntitySet Name="UserProfiles" EntityType="Self.UserProfile" />
+    <EntitySet Name="UserToOrgs" EntityType="Self.UserToOrg" />
+    <AssociationSet Name="FK_Actions_Rule_Types" Association="Self.FK_Actions_Rule_Types">
+      <End Role="Rule_Types" EntitySet="Rule_Types" />
+      <End Role="Actions" EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AllRules_W_ID_Actions" Association="Self.FK_AllRules_W_ID_Actions">
+      <End Role="Actions" EntitySet="Actions" />
+      <End Role="AllRules_W_ID" EntitySet="AllRules_W_ID" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AllRules_W_ID_Rule_Types" Association="Self.FK_AllRules_W_ID_Rule_Types">
+      <End Role="Rule_Types" EntitySet="Rule_Types" />
+      <End Role="AllRules_W_ID" EntitySet="AllRules_W_ID" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryToRule_AllRules_W_ID" Association="Self.FK_CategoryToRule_AllRules_W_ID">
+      <End Role="AllRules_W_ID" EntitySet="AllRules_W_ID" />
+      <End Role="CategoryToRule" EntitySet="CategoryToRules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupToRule_W_ID_AllRules_W_ID" Association="Self.FK_GroupToRule_W_ID_AllRules_W_ID">
+      <End Role="AllRules_W_ID" EntitySet="AllRules_W_ID" />
+      <End Role="GroupToRule_W_ID" EntitySet="GroupToRule_W_ID" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_Rule_Types" Association="Self.FK_Category_Rule_Types">
+      <End Role="Rule_Types" EntitySet="Rule_Types" />
+      <End Role="Category" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CategoryToRule_Rule_Types" Association="Self.FK_CategoryToRule_Rule_Types">
+      <End Role="Rule_Types" EntitySet="Rule_Types" />
+      <End Role="CategoryToRule" EntitySet="CategoryToRules" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerGroups_Groups" Association="Self.FK_CustomerGroups_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="CustomerGroups" EntitySet="CustomerGroups" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Display_Category_Rule_Types" Association="Self.FK_Display_Category_Rule_Types">
+      <End Role="Rule_Types" EntitySet="Rule_Types" />
+      <End Role="Display_Category" EntitySet="Display_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Display_Category_UniqDisplayName" Association="Self.FK_Display_Category_UniqDisplayName">
+      <End Role="UniqDisplayName" EntitySet="UniqDisplayNames" />
+      <End Role="Display_Category" EntitySet="Display_Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupToRule_W_ID_Groups" Association="Self.FK_GroupToRule_W_ID_Groups">
+      <End Role="Groups" EntitySet="Groups" />
+      <End Role="GroupToRule_W_ID" EntitySet="GroupToRule_W_ID" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupToRule_W_ID_Rule_Types" Association="Self.FK_GroupToRule_W_ID_Rule_Types">
+      <End Role="Rule_Types" EntitySet="Rule_Types" />
+      <End Role="GroupToRule_W_ID" EntitySet="GroupToRule_W_ID" />
+    </AssociationSet>
+    <EntitySet Name="ProductToUsers" EntityType="netsModel.ProductToUser" />
+    <AssociationSet Name="FK__URLToDevi__Produ__48CFD27E" Association="netsModel.FK__URLToDevi__Produ__48CFD27E">
+      <End Role="ProductToUser" EntitySet="ProductToUsers" />
+      <End Role="URLToDevice" EntitySet="URLToDevices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__URLToDevi__Produ__628FA481" Association="netsModel.FK__URLToDevi__Produ__628FA481">
+      <End Role="ProductToUser" EntitySet="ProductToUsers" />
+      <End Role="URLToDevice" EntitySet="URLToDevices" />
+    </AssociationSet>
+    <EntitySet Name="Users" EntityType="netsModel.User" />
+    <AssociationSet Name="FK_ProductToUser_Users" Association="netsModel.FK_ProductToUser_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ProductToUser" EntitySet="ProductToUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserProfile_Users" Association="netsModel.FK_UserProfile_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserProfile" EntitySet="UserProfiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserToOrg_Users" Association="netsModel.FK_UserToOrg_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserToOrg" EntitySet="UserToOrgs" />
+    </AssociationSet>
+    <EntitySet Name="ProductPrices" EntityType="netsModel.ProductPrice" />
+  </EntityContainer>
+  <EntityType Name="ProductToUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="OperatingSystem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Location" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PrimaryUserName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Settings" Type="Int32" />
+    <Property Name="PhoneOS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Manufacturer" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="PrimaryUser" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Usage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ZscalerLogin" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Paid" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="LastPaymentDate" Type="DateTime" Precision="3" />
+    <Property Name="MonthlyPrice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="YearlyPrice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AddCount" Type="Int32" />
+    <Property Name="PaymentPeriod" Type="Int32" />
+    <Property Name="LicenseStartDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="URLToDevices" Relationship="netsModel.FK__URLToDevi__Produ__48CFD27E" FromRole="ProductToUser" ToRole="URLToDevice" />
+    <NavigationProperty Name="URLToDevices1" Relationship="netsModel.FK__URLToDevi__Produ__628FA481" FromRole="ProductToUser" ToRole="URLToDevice" />
+    <NavigationProperty Name="User" Relationship="netsModel.FK_ProductToUser_Users" FromRole="ProductToUser" ToRole="User" />
+  </EntityType>
+  <Association Name="FK__URLToDevi__Produ__48CFD27E">
+    <End Type="netsModel.ProductToUser" Role="ProductToUser" Multiplicity="0..1" />
+    <End Type="netsModel.URLToDevice" Role="URLToDevice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductToUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="URLToDevice">
+        <PropertyRef Name="ProductToUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__URLToDevi__Produ__628FA481">
+    <End Type="netsModel.ProductToUser" Role="ProductToUser" Multiplicity="0..1" />
+    <End Type="netsModel.URLToDevice" Role="URLToDevice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductToUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="URLToDevice">
+        <PropertyRef Name="ProductToUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="PasswordReset" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ProductToUsers" Relationship="netsModel.FK_ProductToUser_Users" FromRole="User" ToRole="ProductToUser" />
+    <NavigationProperty Name="UserProfiles" Relationship="netsModel.FK_UserProfile_Users" FromRole="User" ToRole="UserProfile" />
+    <NavigationProperty Name="UserToOrgs" Relationship="netsModel.FK_UserToOrg_Users" FromRole="User" ToRole="UserToOrg" />
+  </EntityType>
+  <Association Name="FK_ProductToUser_Users">
+    <End Type="netsModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="netsModel.ProductToUser" Role="ProductToUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductToUser">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserProfile_Users">
+    <End Type="netsModel.User" Role="User" Multiplicity="1" />
+    <End Type="netsModel.UserProfile" Role="UserProfile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserProfile">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserToOrg_Users">
+    <End Type="netsModel.User" Role="User" Multiplicity="1" />
+    <End Type="netsModel.UserToOrg" Role="UserToOrg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserToOrg">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ProductPrice">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductType" Type="Int32" Nullable="false" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MonthlyPrice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="YearlyPrice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AdditionalLicenseCount" Type="Int32" />
+    <Property Name="AdditionalLicenseMonthlyPrice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AdditionalLicenseYearlyPrice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SecondMasterMonthlyPrice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SecondmasterYearlyPrice" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SettingType" Type="Int32" />
+  </EntityType>
+</Schema>

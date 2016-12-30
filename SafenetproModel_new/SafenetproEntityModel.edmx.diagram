@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="82603f12765a4b1b9effe1d5ad8001af" Name="Diagram1">
+        <EntityTypeShape EntityType="netsModel.Action" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.AdminUser" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.AllRules_W_ID" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.Category" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.CategoryToRule" Width="1.5" PointX="7.5" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.CustomerGroup" Width="1.5" PointX="10.5" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.Customer" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.Display_Category" Width="1.5" PointX="6" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.Group" Width="1.5" PointX="8.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.GroupToRule_W_ID" Width="1.5" PointX="10.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.Organization" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.Product" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.ProductToUserChange" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.Rule_Types" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.torahbletlech_docs" Width="1.5" PointX="5.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.UniqDisplayName" Width="1.5" PointX="3.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.URLToDevice" Width="1.5" PointX="13.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.URLToDeviceChange" Width="1.5" PointX="7.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.UserBillingAddress" Width="1.5" PointX="2.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.UserProfile" Width="1.5" PointX="11" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="netsModel.UserToOrg" Width="1.5" PointX="11" PointY="23.375" IsExpanded="true" />
+        <AssociationConnector Association="netsModel.FK_Actions_Rule_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="netsModel.FK_AllRules_W_ID_Actions" ManuallyRouted="false" />
+        <AssociationConnector Association="netsModel.FK_AllRules_W_ID_Rule_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="netsModel.FK_CategoryToRule_AllRules_W_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="netsModel.FK_GroupToRule_W_ID_AllRules_W_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="netsModel.FK_Category_Rule_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="netsModel.FK_CategoryToRule_Rule_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="netsModel.FK_CustomerGroups_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="netsModel.FK_Display_Category_Rule_Types" ManuallyRouted="false" />
+        <AssociationConnector Association="netsModel.FK_Display_Category_UniqDisplayName" ManuallyRouted="false" />
+        <AssociationConnector Association="netsModel.FK_GroupToRule_W_ID_Groups" ManuallyRouted="false" />
+        <AssociationConnector Association="netsModel.FK_GroupToRule_W_ID_Rule_Types" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="netsModel.ProductToUser" Width="1.5" PointX="11" PointY="10.25" />
+        <AssociationConnector Association="netsModel.FK__URLToDevi__Produ__48CFD27E" />
+        <AssociationConnector Association="netsModel.FK__URLToDevi__Produ__628FA481" />
+        <EntityTypeShape EntityType="netsModel.User" Width="1.5" PointX="8.75" PointY="16.5" />
+        <AssociationConnector Association="netsModel.FK_ProductToUser_Users" />
+        <AssociationConnector Association="netsModel.FK_UserProfile_Users" />
+        <AssociationConnector Association="netsModel.FK_UserToOrg_Users" />
+        <EntityTypeShape EntityType="netsModel.ProductPrice" Width="1.5" PointX="15.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

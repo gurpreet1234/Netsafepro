@@ -1,0 +1,347 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+body {
+   /* padding-top: 85px;*/
+    color: #7c7c7c;
+}
+.margin-top10{ margin-top:10px;}
+.navbar{ margin-bottom:0;}
+.navbar-brand {
+    height: auto;
+}
+
+.navbg {
+    background: #f2f2f2;
+}
+
+.urlBar {
+    background: #7c7c7c;
+    padding: 0px 0px;
+    color: #fff;
+}
+
+    .urlBar a {
+        color: #333;
+    }
+
+h4 {
+    color: #ffa200;
+    text-transform: uppercase;
+}
+
+.RequestForm .field {
+    margin-bottom: 10px;
+}
+
+.grayBox {
+    background: #f2f2f2;
+    padding: 45px 30px;
+}
+
+.margin-top30 {
+    margin-top: 30px;
+}
+
+hr {
+    border-color: #e6e6e6;
+    margin: 35px 0;
+}
+
+.btn {
+    text-transform: uppercase;
+    padding: 7px 20px;
+}
+
+.secOne {
+    position: relative;
+    padding: 30px 20px;
+    background: #ffa200;
+    min-height: 100px;
+}
+
+.left-caret {
+    border-left: 50px solid;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    position: absolute;
+    top: 0;
+    right: -54px;
+    height: 100%;
+    border-left-color: #ffa200;
+}
+
+.secOne:hover {
+    background: #f9b949;
+}
+
+    .secOne:hover .left-caret {
+        border-left-color: #f9b949;
+    }
+
+.btn-default {
+    background: #ffa200 !important;
+    color: #333;
+    border: 1px solid #d19b07;
+    text-shadow: 0 0 0 #000;
+}
+
+    .btn-default:hover {
+        border: 1px solid #d19b07;
+        background: #f9b949 !important;
+        color: #333;
+    }
+
+.secTwo {
+    padding: 30px 0px 30px 70px;
+}
+
+    .secTwo h4 {
+        margin: 0;
+    }
+
+    .secTwo p {
+        padding: 0;
+        margin: 0;
+    }
+
+.AccessNotification {
+    background: #c90000;
+    height: 5px;
+    position: relative;
+    color: #c90000;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0;
+}
+
+    .AccessNotification span {
+        background: #fff;
+        padding: 5px 10px;
+        top: -8px;
+        position: relative;
+        margin-left: 20px;
+    }
+
+footer {
+    background: #f2f2f2;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+    footer ul {
+        list-style: none;
+    }
+
+        footer ul li {
+            display: inline-block;
+        }
+
+            footer ul li a {
+                padding: 0 20px;
+            }
+
+
+
+/*Tab Panel Start*/
+
+.tableTabPanel {
+    margin-top: 10px;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.tableCell {
+    border: 0px solid gray;
+    margin: 20px;
+    padding: 8px;
+    white-space: nowrap;
+}
+
+.tableBlankCell {
+    padding: 20px;
+}
+
+.tableDropDown {
+    width: 70%;
+     font-size: 13px;
+  padding: 5px 5px 5px 4px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+.tableDropDown .select{
+  width: 120%;
+  background-position:80% center;
+}
+
+.tableDropDown .select select{
+  background: transparent;
+  line-height: 1;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  width: 120%;
+  position: relative;
+  z-index: 10;
+  font-size: 1em;
+}
+
+/*Tab Panel End*/
+
+
+
+/*Tab Control Start*/
+
+/*Header*/
+.Tab .ajax__tab_header {
+    color: #4682b4;
+    font-family: Calibri;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #ffffff;
+    margin-left: 0px;
+}
+/*Body*/
+.Tab .ajax__tab_body {
+    border: 1px solid #b4cbdf;
+    margin-top:30px;
+    margin-left:80px;
+    margin-right:80px;
+    height:250px;
+    overflow-y:scroll !important;
+}
+/*Tab Active*/
+.Tab .ajax__tab_active .ajax__tab_tab {
+    color: #ffffff;
+    background: url("../img/tab_active.gif") repeat-x;
+    height: 22px;
+}
+
+.Tab .ajax__tab_active .ajax__tab_inner {
+    color: #ffffff;
+    background: url("../img/tab_left_active.gif") no-repeat left;
+    padding-left: 10px;
+    height: 22px;
+}
+
+.Tab .ajax__tab_active .ajax__tab_outer {
+    color: #ffffff;
+    background: url("../img/tab_right_active.gif") no-repeat right;
+    padding-right: 6px;
+    height: 22px;
+}
+/*Tab Hover*/
+.Tab .ajax__tab_hover .ajax__tab_tab {
+    color: #000000;
+    background: url("../img/tab_hover.gif") repeat-x;
+    height: 22px;
+}
+
+.Tab .ajax__tab_hover .ajax__tab_inner {
+    color: #000000;
+    background: url("../img/tab_left_hover.gif") no-repeat left;
+    padding-left: 10px;
+    height: 22px;
+}
+
+.Tab .ajax__tab_hover .ajax__tab_outer {
+    color: #000000;
+    background: url("../img/tab_right_hover.gif") no-repeat right;
+    padding-right: 6px;
+    height: 22px;
+}
+/*Tab Inactive*/
+.Tab .ajax__tab_tab {
+    color: #666666;
+    background: url("../img/tab_Inactive.gif") repeat-x;
+    height: 22px;
+}
+
+.Tab .ajax__tab_inner {
+    color: #666666;
+    background: url("../img/tab_left_inactive.gif") no-repeat left;
+    padding-left: 10px;
+    height: 22px;
+}
+
+.Tab .ajax__tab_outer {
+    color: #666666;
+    background: url("../img/tab_right_inactive.gif") no-repeat right;
+    padding-right: 6px;
+    margin-right: 2px;
+    height: 22px;
+}
+
+.cpHeader {
+    color: white;
+    background-color: #719DDB;
+    font: bold 11px auto "Trebuchet MS", Verdana;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.cpBody {
+    font: normal 11px auto Verdana, Arial;
+    border: 1px gray;
+    padding: 4px;
+    padding-top: 7px;
+    margin-left: 15px;
+}
+
+/*Tab Control End*/
+
+.overlay {
+    position: fixed;
+    z-index: 98;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #aaa;
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+}
+
+.overlayContent {
+    z-index: 99;
+    margin: 250px auto;
+    width: 80px;
+    height: 80px;
+}
+
+.Innerdiv {
+    float: left;
+    width: 16%;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+.mainDiv {
+    width: 100%;
+    font-size: 12px;
+}
+
+.firstDiv {
+    margin-bottom: 10px;
+}
+
+.extenderImage {
+    margin-left: 20px;
+}
+
+.extenderLabel {
+    margin-left: 12px;
+}
+
+.inputbtnsave{
+    margin-left:50%;
+    margin-top:1%;
+}

@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{35B6EB49-2317-47CB-A5B6-8D3C41BE05CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SafenetproModel_new</RootNamespace>
+    <AssemblyName>SafenetproModel_new</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Action.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUser.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AllRules_W_ID.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Category.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CategoryToRule.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerGroup.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Display_Category.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Group.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GroupToRule_W_ID.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Organization.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductPrice.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductToUser.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductToUserChange.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rule_Types.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SafenetproEntityModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SafenetproEntityModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SafenetproEntityModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SafenetproEntityModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SafenetproEntityModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="torahbletlech_docs.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UniqDisplayName.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="URLToDevice.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="URLToDeviceChange.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserBillingAddress.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserToOrg.cs">
+      <DependentUpon>SafenetproEntityModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="SafenetproEntityModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SafenetproEntityModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="SafenetproEntityModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SafenetproEntityModel.edmx</DependentUpon>
+      <LastGenOutput>SafenetproEntityModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SafenetproEntityModel.edmx.diagram">
+      <DependentUpon>SafenetproEntityModel.edmx</DependentUpon>
+    </None>
+    <None Include="SafenetproEntityModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SafenetproEntityModel.edmx</DependentUpon>
+      <LastGenOutput>SafenetproEntityModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="netsModelStoreContainer" CdmEntityContainer="netsEntities">
+    <EntitySetMapping Name="Actions">
+      <EntityTypeMapping TypeName="netsModel.Action">
+        <MappingFragment StoreEntitySet="Actions">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Action1" ColumnName="Action" />
+          <ScalarProperty Name="RuleTypeId" ColumnName="RuleTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminUsers">
+      <EntityTypeMapping TypeName="netsModel.AdminUser">
+        <MappingFragment StoreEntitySet="AdminUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllRules_W_ID">
+      <EntityTypeMapping TypeName="netsModel.AllRules_W_ID">
+        <MappingFragment StoreEntitySet="AllRules_W_ID">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RuleOrder" ColumnName="RuleOrder" />
+          <ScalarProperty Name="ActionId" ColumnName="ActionId" />
+          <ScalarProperty Name="RuleTypeId" ColumnName="RuleTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="netsModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="RuleTypeId" ColumnName="RuleTypeId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoryToRules">
+      <EntityTypeMapping TypeName="netsModel.CategoryToRule">
+        <MappingFragment StoreEntitySet="CategoryToRule">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RuleOrderId" ColumnName="RuleOrderId" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="RuleTypeId" ColumnName="RuleTypeId" />
+          <ScalarProperty Name="AllRule_ID" ColumnName="AllRule_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerGroups">
+      <EntityTypeMapping TypeName="netsModel.CustomerGroup">
+        <MappingFragment StoreEntitySet="CustomerGroups">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="netsModel.Customer">
+        <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Display_Category">
+      <EntityTypeMapping TypeName="netsModel.Display_Category">
+        <MappingFragment StoreEntitySet="Display_Category">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Section" ColumnName="Section" />
+          <ScalarProperty Name="DisplayId" ColumnName="DisplayId" />
+          <ScalarProperty Name="Display" ColumnName="Display" />
+          <ScalarProperty Name="RuleTypeId" ColumnName="RuleTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="netsModel.Group">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="GroupType" ColumnName="GroupType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupToRule_W_ID">
+      <EntityTypeMapping TypeName="netsModel.GroupToRule_W_ID">
+        <MappingFragment StoreEntitySet="GroupToRule_W_ID">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RuleOrder" ColumnName="RuleOrder" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="RuleTypeId" ColumnName="RuleTypeId" />
+          <ScalarProperty Name="AllRule_ID" ColumnName="AllRule_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organizations">
+      <EntityTypeMapping TypeName="netsModel.Organization">
+        <MappingFragment StoreEntitySet="Organizations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrgName" ColumnName="OrgName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="netsModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="MonthlyPrice" ColumnName="MonthlyPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductToUserChanges">
+      <EntityTypeMapping TypeName="netsModel.ProductToUserChange">
+        <MappingFragment StoreEntitySet="ProductToUserChange">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="ProductUserId" ColumnName="ProductUserId" />
+          <ScalarProperty Name="OperatingSystem" ColumnName="OperatingSystem" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="PrimaryUserName" ColumnName="PrimaryUserName" />
+          <ScalarProperty Name="Settings" ColumnName="Settings" />
+          <ScalarProperty Name="PhoneOS" ColumnName="PhoneOS" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="PrimaryUser" ColumnName="PrimaryUser" />
+          <ScalarProperty Name="Usage" ColumnName="Usage" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Change" ColumnName="Change" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rule_Types">
+      <EntityTypeMapping TypeName="netsModel.Rule_Types">
+        <MappingFragment StoreEntitySet="Rule_Types">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="RuleType" ColumnName="RuleType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="torahbletlech_docs">
+      <EntityTypeMapping TypeName="netsModel.torahbletlech_docs">
+        <MappingFragment StoreEntitySet="torahbletlech_docs">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="PDFFilePath" ColumnName="PDFFilePath" />
+          <ScalarProperty Name="ImagePath" ColumnName="ImagePath" />
+          <ScalarProperty Name="DocStatus" ColumnName="DocStatus" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UniqDisplayNames">
+      <EntityTypeMapping TypeName="netsModel.UniqDisplayName">
+        <MappingFragment StoreEntitySet="UniqDisplayName">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="URLToDevices">
+      <EntityTypeMapping TypeName="netsModel.URLToDevice">
+        <MappingFragment StoreEntitySet="URLToDevice">
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="ProductToUser" ColumnName="ProductToUser" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="URLToDeviceChanges">
+      <EntityTypeMapping TypeName="netsModel.URLToDeviceChange">
+        <MappingFragment StoreEntitySet="URLToDeviceChange">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="ProductToUserChange" ColumnName="ProductToUserChange" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserBillingAddresses">
+      <EntityTypeMapping TypeName="netsModel.UserBillingAddress">
+        <MappingFragment StoreEntitySet="UserBillingAddress">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserProfiles">
+      <EntityTypeMapping TypeName="netsModel.UserProfile">
+        <MappingFragment StoreEntitySet="UserProfile">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Zip" ColumnName="Zip" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="BName" ColumnName="BName" />
+          <ScalarProperty Name="BAddress" ColumnName="BAddress" />
+          <ScalarProperty Name="BCity" ColumnName="BCity" />
+          <ScalarProperty Name="BState" ColumnName="BState" />
+          <ScalarProperty Name="BZip" ColumnName="BZip" />
+          <ScalarProperty Name="BPhone" ColumnName="BPhone" />
+          <ScalarProperty Name="BCellPhone" ColumnName="BCellPhone" />
+          <ScalarProperty Name="BFax" ColumnName="BFax" />
+          <ScalarProperty Name="BEmailAddress" ColumnName="BEmailAddress" />
+          <ScalarProperty Name="ProfileType" ColumnName="ProfileType" />
+          <ScalarProperty Name="CardDigits" ColumnName="CardDigits" />
+          <ScalarProperty Name="BusinessInfo" ColumnName="BusinessInfo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserToOrgs">
+      <EntityTypeMapping TypeName="netsModel.UserToOrg">
+        <MappingFragment StoreEntitySet="UserToOrg">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="OrgId" ColumnName="OrgId" />
+          <ScalarProperty Name="OrgOther" ColumnName="OrgOther" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductToUsers">
+      <EntityTypeMapping TypeName="netsModel.ProductToUser">
+        <MappingFragment StoreEntitySet="ProductToUser">
+          <ScalarProperty Name="LicenseStartDate" ColumnName="LicenseStartDate" />
+          <ScalarProperty Name="PaymentPeriod" ColumnName="PaymentPeriod" />
+          <ScalarProperty Name="AddCount" ColumnName="AddCount" />
+          <ScalarProperty Name="YearlyPrice" ColumnName="YearlyPrice" />
+          <ScalarProperty Name="MonthlyPrice" ColumnName="MonthlyPrice" />
+          <ScalarProperty Name="LastPaymentDate" ColumnName="LastPaymentDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="ZscalerLogin" ColumnName="ZscalerLogin" />
+          <ScalarProperty Name="Usage" ColumnName="Usage" />
+          <ScalarProperty Name="PrimaryUser" ColumnName="PrimaryUser" />
+          <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+          <ScalarProperty Name="PhoneOS" ColumnName="PhoneOS" />
+          <ScalarProperty Name="Settings" ColumnName="Settings" />
+          <ScalarProperty Name="PrimaryUserName" ColumnName="PrimaryUserName" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="OperatingSystem" ColumnName="OperatingSystem" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="netsModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="PasswordReset" ColumnName="PasswordReset" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductPrices">
+      <EntityTypeMapping TypeName="netsModel.ProductPrice">
+        <MappingFragment StoreEntitySet="ProductPrice">
+          <ScalarProperty Name="SettingType" ColumnName="SettingType" />
+          <ScalarProperty Name="SecondmasterYearlyPrice" ColumnName="SecondmasterYearlyPrice" />
+          <ScalarProperty Name="SecondMasterMonthlyPrice" ColumnName="SecondMasterMonthlyPrice" />
+          <ScalarProperty Name="AdditionalLicenseYearlyPrice" ColumnName="AdditionalLicenseYearlyPrice" />
+          <ScalarProperty Name="AdditionalLicenseMonthlyPrice" ColumnName="AdditionalLicenseMonthlyPrice" />
+          <ScalarProperty Name="AdditionalLicenseCount" ColumnName="AdditionalLicenseCount" />
+          <ScalarProperty Name="YearlyPrice" ColumnName="YearlyPrice" />
+          <ScalarProperty Name="MonthlyPrice" ColumnName="MonthlyPrice" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

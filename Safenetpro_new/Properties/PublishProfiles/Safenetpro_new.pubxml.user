@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\Gurpreet\Projects\Abe\Safenetpro\Published\Safenetpro_new\6July</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>07/06/2016 00:44:17</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>07/06/2016 00:53:23</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/06/2016 00:44:05</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/06/2016 00:43:40</publishTime>
+    </File>
+    <File Include="bin/SafenetproModel_new.dll">
+      <publishTime>07/06/2016 01:13:19</publishTime>
+    </File>
+    <File Include="bin/Safenetpro_new.dll">
+      <publishTime>07/06/2016 01:13:21</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/06/2016 00:44:08</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>07/06/2016 00:44:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>07/06/2016 00:44:09</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>07/06/2016 00:44:11</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>07/06/2016 00:44:06</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>07/06/2016 00:44:01</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>07/06/2016 00:44:00</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>07/06/2016 00:44:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>07/06/2016 00:44:03</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>07/06/2016 00:44:03</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>07/06/2016 00:44:18</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>07/06/2016 00:43:22</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/06/2016 00:43:22</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/06/2016 00:44:19</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>07/06/2016 01:13:23</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
